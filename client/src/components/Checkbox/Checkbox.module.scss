@@ -1,0 +1,37 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 4px;
+    background-color: var(--primary);
+
+    input[type='checkbox'] {
+        position: absolute;
+        opacity: 0;
+    }
+
+    &.small {
+        width: 16px;
+        height: 16px;
+
+        input[type='checkbox'] {
+            width: inherit;
+            height: inherit;
+        }
+    }
+    &.medium {
+        width: 24px;
+        height: 24px;
+
+        input[type='checkbox'] {
+            width: inherit;
+            height: inherit;
+        }
+    }
+}
+
+.wrapper-uncheck {
+    background-color: var(--white);
+    border: 1px solid var(--primary-light);
+}
