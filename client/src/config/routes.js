@@ -3,7 +3,9 @@ const routes = {
     login: '/login',
     register: '/register',
     registerRole: '/register-role',
-    forgotPassword: '/forgot-password'
-}
+    forgotPassword: '/forgot-password',
+    changePassword: '/change-password',
+    confirmCode: '/confirm-code',
+};
 
 export default routes;
