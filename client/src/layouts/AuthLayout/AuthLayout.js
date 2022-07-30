@@ -10,7 +10,7 @@ function AuthLayout({ children }) {
             <div className={cx('container')}>
                 {children}
                 <div className={cx('image')}>
-                    <img srcSet={`${images.login} 2x`} alt="login" />
+                    <img srcSet={`${images.auth} 2x`} alt="auth" />
                 </div>
             </div>
         </div>

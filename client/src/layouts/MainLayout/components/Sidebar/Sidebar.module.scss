@@ -1,0 +1,36 @@
+.wrapper {
+    max-width: 342px;
+    width: 342px;
+    padding: 10px 0;
+    box-shadow: 1px 4px 15px rgba(0, 0, 0, 0.06);
+    height: 100%
+}
+.main {
+    padding: 0 16px;
+}
+
+.menu {
+    margin-top: 24px;
+    margin-bottom: 16px;
+    .menu-item {
+        width: 100%;
+        justify-content: flex-start;
+        padding-left: 24px;
+        padding-right: 24px;
+        border-radius: 8px;
+        color: var(--gray-600);
+        &.active {
+            color: var(--primary-dark);
+            background-color: var(--primary-soft);
+        }
+    }
+}
+
+.menu-item + .menu-item {
+    margin-top: 8px;
+}
+
+.select {
+    width: 100%;
+}
+

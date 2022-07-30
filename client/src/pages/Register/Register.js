@@ -1,6 +1,7 @@
 import classNames from "classnames/bind";
+import { useState } from 'react';
 import Button from "~/components/Button";
-import { BackIcon } from "~/components/Icon";
+import { BackIcon, ShowPasswordIcon } from "~/components/Icon";
 import Input from "~/components/Input";
 
 import styles from "./Register.module.scss";
@@ -9,6 +10,11 @@ import styles from "./Register.module.scss";
 const cx = classNames.bind(styles);
 
 function Register() {
+
+    const [showPassword, setShowPassword] = useState(false);
+    const handleShowPassword = () => {
+        setShowPassword(!showPassword);
+    };
 
     return (
         <div className={cx("wrapper")}>
@@ -25,8 +31,18 @@ function Register() {
                     <div className={cx("form")}>
                         <Input className={cx("input")} title="Email" />
                         <Input className={cx("input")} title="Họ và tên" />
-                        <Input className={cx("input")} title="Mật khẩu" />
-                        <Input className={cx("input")} title="Xác nhận mật khẩu" />
+                        <Input
+                            type={showPassword?"text":"password"}
+                            className={cx('input')}
+                            title="Mật khẩu"
+                            rightIcon={{ icon: <ShowPasswordIcon />, onClick: handleShowPassword }}
+                        />
+                        <Input
+                            type={showPassword?"text":"password"}
+                            className={cx('input')}
+                            title="Xác nhận mật khẩu"
+                            rightIcon={{ icon: <ShowPasswordIcon />, onClick: handleShowPassword }}
+                        />
                     </div>
                     <div className={cx("bottom")}>
                         <Button primary>Đăng ký</Button>

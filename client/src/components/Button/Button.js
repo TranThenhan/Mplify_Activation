@@ -31,11 +31,11 @@ function Button({
         props.href = href;
     }
     const classes = cx('wrapper', {
-        [className]: className,
         primary,
         secondary,
         secondaryError,
         tertiary,
+        [className]: className
     });
 
     return (

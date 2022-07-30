@@ -7,6 +7,7 @@ import RegisterRole from '~/pages/RegisterRole';
 import ForgotPassword from '~/pages/ForgotPassword';
 import ChangePassword from '~/pages/ChangePassword';
 import ConfirmCode from '~/pages/ConfirmCode';
+import CampaignList from '~/pages/CampaignList';
 
 const publicRoutes = [
     { path: routes.home, component: Home, layout: MainLayout },
@@ -16,6 +17,7 @@ const publicRoutes = [
     { path: routes.forgotPassword, component: ForgotPassword, layout: AuthLayout },
     { path: routes.changePassword, component: ChangePassword, layout: AuthLayout },
     { path: routes.confirmCode, component: ConfirmCode, layout: AuthLayout },
+    { path: routes.campaignList, component: CampaignList, layout: MainLayout },
 ];
 
 const privateRoutes = [];

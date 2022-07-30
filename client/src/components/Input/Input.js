@@ -10,9 +10,9 @@ function Input({ title, className, leftIcon, rightIcon, errorMessage = '', ...pr
         <div className={cx('wrapper', { [className]: className })}>
             <span className={cx('title')}>{title}</span>
             <div className={cx('input-wrapper', { [errorOutline]: errorMessage })}>
-                {leftIcon && <span className={cx('icon')}>{leftIcon}</span>}
+                {leftIcon && <span className={cx('icon')}>{leftIcon.icon}</span>}
                 <input {...props} />
-                {rightIcon && <span className={cx('icon')}>{rightIcon}</span>}
+                {rightIcon && <span onClick={rightIcon.onClick} className={cx('icon')}>{rightIcon.icon}</span>}
             </div>
             {errorMessage && <span className={cx('error')}>{errorMessage}</span>}
         </div>

@@ -1,6 +1,7 @@
 import classNames from "classnames/bind";
+import { useState } from 'react';
 import Button from "~/components/Button";
-import { BackIcon } from "~/components/Icon";
+import { BackIcon, ShowPasswordIcon } from "~/components/Icon";
 import Input from "~/components/Input";
 
 import styles from "./ChangePassword.module.scss";
@@ -9,6 +10,10 @@ import styles from "./ChangePassword.module.scss";
 const cx = classNames.bind(styles);
 
 function ChangePassword() {
+    const [showPassword, setShowPassword] = useState(false);
+    const handleShowPassword = () => {
+        setShowPassword(!showPassword);
+    };
 
     return (
         <div className={cx("wrapper")}>
@@ -19,8 +24,18 @@ function ChangePassword() {
                 </div>
                 <div className={cx("body")}>
                     <div className={cx("form")}>
-                        <Input className={cx("input")} title="Mật khẩu mới" />
-                        <Input className={cx("input")} title="Xác nhận mật khẩu" />
+                        <Input
+                            type={showPassword?"text":"password"}
+                            className={cx('input')}
+                            title="Mật khẩu mới"
+                            rightIcon={{ icon: <ShowPasswordIcon />, onClick: handleShowPassword }}
+                        />
+                        <Input
+                            type={showPassword?"text":"password"}
+                            className={cx('input')}
+                            title="Xác nhận mật khẩu"
+                            rightIcon={{ icon: <ShowPasswordIcon />, onClick: handleShowPassword }}
+                        />
                     </div>
                     <div className={cx("bottom")}>
                         <Button primary>Lưu mật khẩu</Button>
