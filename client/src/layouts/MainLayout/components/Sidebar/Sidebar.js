@@ -1,20 +1,43 @@
 import classNames from 'classnames/bind';
+import { useState } from 'react';
 import styles from './Sidebar.module.scss';
 import images from '~/assests/images';
-import Input from '~/components/Input';
 import Button from '~/components/Button';
-import { ChartPieIcon, UserGroupIcon, GearIcon, ChevronUpIcon } from '~/components/Icon';
+import {
+    ChartPieIcon,
+    UserGroupIcon,
+    GearIcon,
+    ChevronUpIcon,
+    NoIcon,
+    LogoutIcon,
+    ChevronDownIcon,
+} from '~/components/Icon';
+import Select from '~/components/Select';
+import Option from '~/components/Option';
 
 const cx = classNames.bind(styles);
 
 function Sidebar() {
+    const [toggleCollapse, setToggleCollapse] = useState(false);
+
+    const [selectValue, setSelectValue] = useState('');
+    const [hideOptions, setHideOptions] = useState(false);
+    const handleSelect = (e) => {
+        setSelectValue(e.target.textContent);
+        setHideOptions(!hideOptions)
+    };
+
     return (
         <aside className={cx('wrapper')}>
             <div className={cx('logo')}>
                 <img srcSet={`${images.logoDesktop} 2x`} alt="logo" />
             </div>
             <div className={cx('main')}>
-                <Input className={cx('select')} />
+                <Select hideOptions={hideOptions} value={selectValue}>
+                    <Option onClick={handleSelect}>Chien dich A</Option>
+                    <Option onClick={handleSelect}>Chien dich B</Option>
+                    <Option onClick={handleSelect}>Chien dich C</Option>
+                </Select>
                 <div className={cx('menu')}>
                     <Button className={cx('menu-item', { active: true })} leftIcon={<UserGroupIcon />} to="/register">
                         Quản lý gian hàng
@@ -23,19 +46,46 @@ function Sidebar() {
                         Báo cáo tổng hợp
                     </Button>
                     <Button
-                        className={cx('menu-item', { active: true })}
+                        className={cx('menu-item')}
                         leftIcon={<GearIcon />}
-                        rightIcon={<ChevronUpIcon />}
-                        to="/register"
+                        rightIcon={toggleCollapse === true ? <ChevronUpIcon /> : <ChevronDownIcon />}
+                        onClick={() => setToggleCollapse(!toggleCollapse)}
                     >
                         Cài đặt
                     </Button>
-                    <Button className={cx('menu-item')} to='/register'>Danh sách chiến dịch</Button>
-                    <Button className={cx('menu-item')} to='/register'>Thông tin tài khoản</Button>
-                    <Button className={cx('menu-item')} to='/register'>Đổi mật khẩu</Button>
-                    <Button className={cx('menu-item')} to='/register'>Ngôn ngữ</Button>
-                    <Button className={cx('menu-item')} to='/register'>Liên hệ</Button>
+                    {toggleCollapse && (
+                        <div className={cx('collapse')}>
+                            <Button
+                                className={cx('collapse-item', { active: true })}
+                                leftIcon={<NoIcon />}
+                                to="/register"
+                            >
+                                Danh sách chiến dịch
+                            </Button>
+                            <Button className={cx('collapse-item')} leftIcon={<NoIcon />} to="/register">
+                                Thông tin tài khoản
+                            </Button>
+                            <Button className={cx('collapse-item')} leftIcon={<NoIcon />} to="/register">
+                                Đổi mật khẩu
+                            </Button>
+                            <Button
+                                className={cx('collapse-item')}
+                                leftIcon={<NoIcon />}
+                                rightIcon={<span className={cx('language')}>Tiếng Việt</span>}
+                                to="/register"
+                            >
+                                Ngôn ngữ
+                            </Button>
+                            <Button className={cx('collapse-item')} leftIcon={<NoIcon />} to="/register">
+                                Liên hệ
+                            </Button>
+                        </div>
+                    )}
                 </div>
+
+                <Button className={cx('logout-btn')} leftIcon={<LogoutIcon />} secondaryError>
+                    Đăng xuất
+                </Button>
             </div>
         </aside>
     );

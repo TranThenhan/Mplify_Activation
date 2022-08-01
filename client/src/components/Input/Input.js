@@ -8,11 +8,15 @@ function Input({ title, className, leftIcon, rightIcon, errorMessage = '', ...pr
 
     return (
         <div className={cx('wrapper', { [className]: className })}>
-            <span className={cx('title')}>{title}</span>
+            {title && <span className={cx('title')}>{title}</span>}
             <div className={cx('input-wrapper', { [errorOutline]: errorMessage })}>
                 {leftIcon && <span className={cx('icon')}>{leftIcon.icon}</span>}
                 <input {...props} />
-                {rightIcon && <span onClick={rightIcon.onClick} className={cx('icon')}>{rightIcon.icon}</span>}
+                {rightIcon && (
+                    <span onClick={rightIcon.onClick} className={cx('icon')}>
+                        {rightIcon.icon}
+                    </span>
+                )}
             </div>
             {errorMessage && <span className={cx('error')}>{errorMessage}</span>}
         </div>

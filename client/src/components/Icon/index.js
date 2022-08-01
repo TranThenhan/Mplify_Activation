@@ -1,8 +1,8 @@
-export const Icon = ({ width = '2.4rem', height = '2.4rem' }) => (
+export const LogoutIcon = () => (
     <svg
         style={{ display: 'block' }}
-        width={width}
-        height={height}
+        width="2.4rem"
+        height="2.4rem"
         viewBox="0 0 24 24"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -25,11 +25,11 @@ export const Icon = ({ width = '2.4rem', height = '2.4rem' }) => (
     </svg>
 );
 
-export const BackIcon = ({ width = '2.4rem', height = '2.4rem' }) => (
+export const BackIcon = () => (
     <svg
         style={{ display: 'block' }}
-        width={width}
-        height={height}
+        width="2.4rem"
+        height="2.4rem"
         viewBox="0 0 24 24"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -166,4 +166,34 @@ export const ChevronUpIcon = () => (
     >
         <path d="M18 15L12 9L6 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
+);
+
+export const ChevronDownIcon = () => (
+    <svg
+        style={{ display: 'block' }}
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+    >
+        <path d="M6 9L12 15L18 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+);
+
+export const ChevronDownIcon16 = () => (
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 6L8 10L12 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+);
+
+export const NoIcon = () => (
+    <svg
+        style={{ display: 'block' }}
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+    ></svg>
 );
