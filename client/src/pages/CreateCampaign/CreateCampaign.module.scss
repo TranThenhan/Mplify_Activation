@@ -1,0 +1,32 @@
+.wrapper {
+    padding: 32px 40px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px 0;
+}
+.select-title {
+    display: block;
+    width: 100%;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+    margin-bottom: 4px;
+    color: var(--gray-800);
+}
+.select-items {
+    display: flex;
+    align-items: center;
+    gap: 0 10px;
+
+    .select {
+        width: 251px;
+    }
+}
+
+.create-btn {
+    margin-top: 32px;
+    width: 205px;
+}

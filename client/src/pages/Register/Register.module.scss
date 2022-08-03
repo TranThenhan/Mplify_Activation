@@ -35,10 +35,6 @@
   justify-content: space-between;
   gap: 36px 0;
 
-  input + input {
-    margin-top: 16px;
-  }
-
   p {
     font-weight: 500;
     font-size: 1.4rem;
@@ -49,6 +45,12 @@
   a[href] {
     color: var(--primary-dark);
   }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px 0;
 }
 
 .bottom {
@@ -72,7 +74,7 @@
   display: none;
 }
 
-@media (max-width: 739px) {
+@media (max-width: 767px) {
   .wrapper {
     margin-left: 0;
     margin-top: 0;
@@ -85,8 +87,4 @@
   .back-btn {
     display: inline-flex;
   }
-}
-
-@media (min-width: 740px) and (max-width: 1379px) {
-
 }

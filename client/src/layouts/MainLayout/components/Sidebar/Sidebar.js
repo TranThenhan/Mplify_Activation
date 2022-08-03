@@ -18,7 +18,7 @@ import Option from '~/components/Option';
 const cx = classNames.bind(styles);
 
 function Sidebar() {
-    const [toggleCollapse, setToggleCollapse] = useState(false);
+    const [toggleSetting, setToggleSetting] = useState(true);
 
     const [selectValue, setSelectValue] = useState('');
     const [hideOptions, setHideOptions] = useState(false);
@@ -48,12 +48,12 @@ function Sidebar() {
                     <Button
                         className={cx('menu-item')}
                         leftIcon={<GearIcon />}
-                        rightIcon={toggleCollapse === true ? <ChevronUpIcon /> : <ChevronDownIcon />}
-                        onClick={() => setToggleCollapse(!toggleCollapse)}
+                        rightIcon={toggleSetting === true ? <ChevronUpIcon /> : <ChevronDownIcon />}
+                        onClick={() => setToggleSetting(!toggleSetting)}
                     >
                         Cài đặt
                     </Button>
-                    {toggleCollapse && (
+                    {toggleSetting && (
                         <div className={cx('collapse')}>
                             <Button
                                 className={cx('collapse-item', { active: true })}
