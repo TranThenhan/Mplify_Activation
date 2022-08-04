@@ -1,0 +1,28 @@
+//nav-bar
+.nav-bar {
+    width: 100%;
+    display: flex;
+}
+
+.back-block {
+    display: flex;
+    align-items: center;
+    gap: 0 12px;
+    flex: 1;
+}
+
+.back-btn {
+    width: 24px;
+    height: 24x;
+    color: var(--back);
+    padding: 0 0;
+    background-color: transparent;
+}
+
+
+@media (min-width: 1023px) {
+    .nav-bar {
+        display: none;
+    }
+}
+
