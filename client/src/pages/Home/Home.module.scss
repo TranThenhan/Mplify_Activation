@@ -1,0 +1,75 @@
+.wrapper {
+    padding-top: 32px;
+    padding-bottom: 26px;
+}
+
+.user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px 0;
+}
+
+.edit-btn {
+    width: 16px;
+    height: 16px;
+    padding: 0 0;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 90px;
+}
+
+.name-block {
+    display: flex;
+    gap: 0 12px;
+    align-items: center;
+}
+
+.name {
+    font-weight: 500;
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+}
+
+.role {
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+}
+
+.left-icon {
+    color: var(--primary);
+}
+
+.menu {
+    margin-bottom: 202px;
+    border-top: 1px solid var(--gray-200);
+    border-bottom: 1px solid var(--gray-200);
+    .menu-item {
+        border-radius: 0;
+        
+    }
+
+    .menu-item + .menu-item {
+        border-top: 1px solid var(--gray-200);
+    }
+}
+
+.right-icon {
+    color: var(--gray-400);
+}
+
+.language {
+    color: var(--gray-400);
+    display: flex;
+    gap: 0 16px;
+    align-items: center;
+}
+
+.btn-block {
+    padding: 0 16px;
+}
