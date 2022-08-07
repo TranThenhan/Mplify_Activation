@@ -1,24 +1,37 @@
 import classNames from 'classnames/bind';
 import { useState, useEffect } from 'react';
 import { ChevronDownIcon16 } from '../Icon';
+import Option from '../Option';
 import styles from './Select.module.scss';
 
 const cx = classNames.bind(styles);
 
-function Select({ value, hideOptions, children, className, ...props }) {
+function Select({ value, children, className, onChange}) {
     const [show, setShow] = useState(false);
-    useEffect(() => {
+
+    const handleSelectOption = (optValue) => {
+        onChange(optValue);
         setShow(false);
-    }, [hideOptions]);
+    };
 
     return (
-        <div className={cx('wrapper', {[className]: className})}>
+        <div className={cx('wrapper', { [className]: className })}>
             <div className={cx('inner')} onBlur={() => setShow(false)} tabIndex={0}>
                 <div className={cx('select')} onClick={() => setShow(!show)}>
                     {value}
                     <ChevronDownIcon16 />
                 </div>
-                {show && <div className={cx('wrapper-options')}>{children}</div>}
+                {show && (
+                    <div className={cx('wrapper-options')}>
+                        {children.map((child, index) => {
+                            return (
+                                <Option key={index} value={child.props.value} onClick={handleSelectOption}>
+                                    {child.props.children}
+                                </Option>
+                            );
+                        })}
+                    </div>
+                )}
             </div>
         </div>
     );

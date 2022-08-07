@@ -19,13 +19,13 @@ const cx = classNames.bind(styles);
 
 function Sidebar() {
     const [toggleSetting, setToggleSetting] = useState(true);
-
     const [selectValue, setSelectValue] = useState('');
-    const [hideOptions, setHideOptions] = useState(false);
-    const handleSelect = (e) => {
-        setSelectValue(e.target.textContent);
-        setHideOptions(!hideOptions)
+
+    const handleChangeSelect = (value) => {
+        setSelectValue(value);
     };
+
+
 
     return (
         <aside className={cx('wrapper')}>
@@ -33,13 +33,14 @@ function Sidebar() {
                 <img srcSet={`${images.logoDesktop} 2x`} alt="logo" />
             </div>
             <div className={cx('main')}>
-                <Select hideOptions={hideOptions} value={selectValue}>
-                    <Option onClick={handleSelect}>Chien dich A</Option>
-                    <Option onClick={handleSelect}>Chien dich B</Option>
-                    <Option onClick={handleSelect}>Chien dich C</Option>
+                <Select value={selectValue} onChange={handleChangeSelect}>
+                    <Option value="a">Chien dich A</Option>
+                    <Option value="b">Chien dich B</Option>
+                    <Option value="c">Chien dich C</Option>
                 </Select>
+
                 <div className={cx('menu')}>
-                    <Button className={cx('menu-item', { active: true })} leftIcon={<UserGroupIcon />} to="/register">
+                    <Button className={cx('menu-item')} leftIcon={<UserGroupIcon />} to="/">
                         Quản lý gian hàng
                     </Button>
                     <Button className={cx('menu-item')} leftIcon={<ChartPieIcon />} to="/register">
@@ -56,13 +57,17 @@ function Sidebar() {
                     {toggleSetting && (
                         <div className={cx('collapse')}>
                             <Button
-                                className={cx('collapse-item', { active: true })}
+                                className={cx('collapse-item')}
                                 leftIcon={<NoIcon />}
-                                to="/register"
+                                to="/campaign-list"
                             >
                                 Danh sách chiến dịch
                             </Button>
-                            <Button className={cx('collapse-item')} leftIcon={<NoIcon />} to="/register">
+                            <Button
+                                className={cx('collapse-item')}
+                                leftIcon={<NoIcon />}
+                                to="/campaign-create"
+                            >
                                 Thông tin tài khoản
                             </Button>
                             <Button className={cx('collapse-item')} leftIcon={<NoIcon />} to="/register">

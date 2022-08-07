@@ -73,3 +73,9 @@
 .btn-block {
     padding: 0 16px;
 }
+
+@media (min-width: 1023px) {
+    .wrapper {
+        display: none;
+    }
+}

@@ -3,11 +3,11 @@ import styles from './Option.module.scss';
 
 const cx = classNames.bind(styles);
 
-function Option({ children, ...props }) {
-
+function Option({ value, children, onClick }) {
     return (
-       <div {...props} className={cx('option')}>{children}</div>
+        <div className={cx('option')} onClick={() => onClick(value)}>
+            {children}
+        </div>
     );
 }
-
 export default Option;
