@@ -1,5 +1,5 @@
-//nav-bar
-.nav-bar {
+//top-bar
+.top-bar {
     width: 100%;
     display: flex;
 }
@@ -21,7 +21,7 @@
 
 
 @media (min-width: 1023px) {
-    .nav-bar {
+    .back-btn {
         display: none;
     }
 }

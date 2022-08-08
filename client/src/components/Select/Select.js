@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
-import { useState, useEffect } from 'react';
-import { ChevronDownIcon16 } from '../Icon';
+import { useState } from 'react';
+import { ChevronDownIcon } from '../Icon';
 import Option from '../Option';
 import styles from './Select.module.scss';
 
@@ -19,7 +19,7 @@ function Select({ value, children, className, onChange}) {
             <div className={cx('inner')} onBlur={() => setShow(false)} tabIndex={0}>
                 <div className={cx('select')} onClick={() => setShow(!show)}>
                     {value}
-                    <ChevronDownIcon16 />
+                    <ChevronDownIcon size='16'/>
                 </div>
                 {show && (
                     <div className={cx('wrapper-options')}>

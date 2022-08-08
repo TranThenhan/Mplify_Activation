@@ -2,7 +2,7 @@ import classNames from 'classnames/bind';
 import Button from '~/components/Button';
 import Input from '~/components/Input';
 import Select from '~/components/Select';
-import NavbarMobile from '~/layouts/MainLayout/components/NavbarMobile/NavbarMobile';
+import Topbar from '~/layouts/MainLayout/components/Topbar';
 import styles from './CreateCampaign.module.scss';
 
 const cx = classNames.bind(styles);
@@ -10,7 +10,7 @@ const cx = classNames.bind(styles);
 function CreateCampaign() {
     return (
         <div className={cx('wrapper')}>
-            <NavbarMobile
+            <Topbar
                 currentPage={<span className={cx('current-page')}>Tạo chiến dịch</span>}
             />
             <div className={cx('form')}>

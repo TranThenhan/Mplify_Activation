@@ -1,20 +1,21 @@
 import classNames from 'classnames/bind';
-import styles from './NavbarMobile.module.scss';
+import styles from './Topbar.module.scss';
 import Button from '~/components/Button';
 import { BackIcon} from '~/components/Icon';
 
 const cx = classNames.bind(styles);
 
-function NavbarMobile({currentPage, rightButton}) {
+function Topbar({currentPage, rightButton, largeRightButton}) {
     return (
-        <div className={cx('nav-bar')}>
+        <div className={cx('top-bar')}>
             <div className={cx('back-block')}>
                 <Button primary className={cx('back-btn')} leftIcon={<BackIcon />}></Button>
                 {currentPage}
             </div>
             {rightButton}
+            {largeRightButton}
         </div>
     );
 }
 
-export default NavbarMobile;
+export default Topbar;
