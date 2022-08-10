@@ -2,11 +2,11 @@ import classNames from 'classnames/bind';
 import { useState } from 'react';
 import Button from '../Button';
 import { ChevronDownIcon, ChevronUpIcon } from '../Icon';
-import styles from './CardExpand.module.scss';
+import styles from './CampaignCardExpand.module.scss';
 
 const cx = classNames.bind(styles);
 
-function CardExpand({ title, children }) {
+function CampaignCardExpand({ title, children }) {
     const [toggle, setToggle] = useState(false);
     const handleClick = () => {
         setToggle(!toggle);
@@ -15,7 +15,7 @@ function CardExpand({ title, children }) {
     let listChildren = children;
     if (!Array.isArray(listChildren)) listChildren = [children];
     const [firstChild, ...restChild] = listChildren;
-    
+
     return (
         <div className={cx('wrapper')}>
             <div className={cx('inner')}>
@@ -23,6 +23,7 @@ function CardExpand({ title, children }) {
                 <div className={cx('content')}>
                     {firstChild}
                     <div className={cx('content-collapse', { show: toggle })}>{restChild}</div>
+                    <div className={cx('content-non-collapse')}>{restChild}</div>
                 </div>
             </div>
             <div className={cx('bottom')}>
@@ -32,8 +33,16 @@ function CardExpand({ title, children }) {
                     leftIcon={toggle ? <ChevronUpIcon /> : <ChevronDownIcon />}
                 />
             </div>
+            <div className={cx('bottom-mobile')}>
+                <Button className={cx('collapse-btn')} primary>
+                    Xem chi tiết
+                </Button>
+                <Button className={cx('collapse-btn')} secondary>
+                    Chỉnh sửa
+                </Button>
+            </div>
         </div>
     );
 }
 
-export default CardExpand;
+export default CampaignCardExpand;

@@ -1,0 +1,32 @@
+.wrapper {
+    display: flex;
+    gap: 0 10px;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+}
+.dot-icon {
+    display: none;
+}
+
+.lable {
+    display: none;
+}
+
+
+
+@media (max-width: 767px) {
+    .dot-icon {
+        display: block;
+    }
+    .icon {
+        display: none;
+    }
+    .lable {
+        display: inline;
+    }
+    .wrapper {
+        gap: 0 0;
+    }
+    
+}

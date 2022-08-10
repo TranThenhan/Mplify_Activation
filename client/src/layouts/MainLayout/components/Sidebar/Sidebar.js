@@ -66,7 +66,7 @@ function Sidebar() {
                             <Button
                                 className={cx('collapse-item')}
                                 leftIcon={<NoIcon />}
-                                to="/campaign-create"
+                                to="/login"
                             >
                                 Thông tin tài khoản
                             </Button>

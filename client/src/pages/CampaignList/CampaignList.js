@@ -3,9 +3,9 @@ import styles from './CampaignList.module.scss';
 import images from '~/assests/images';
 import Button from '~/components/Button';
 import Topbar from '~/layouts/MainLayout/components/Topbar';
-import { ClockIcon, PlusIcon } from '~/components/Icon';
-import CardExpand from '~/components/CardExpand/CardExpand';
-import CardItem from '~/components/CardItem';
+import { PlusIcon } from '~/components/Icon';
+import CampaignCardExpand from '~/components/CampaignCardExpand/CampaignCardExpand';
+import CampaignCardItem from '~/components/CampaignCardItem';
 const cx = classNames.bind(styles);
 
 function CampaignList() {
@@ -16,23 +16,33 @@ function CampaignList() {
                 <div className={cx('list-wrapper')}>
                     <Topbar
                         currentPage={<span className={cx('current-page')}>Danh sách chiến dịch</span>}
-                        rightButton={<Button primary className={cx('add-btn')} leftIcon={<PlusIcon />}></Button>}
+                        rightButton={
+                            <Button
+                                to="/campaign-create"
+                                primary
+                                className={cx('add-btn')}
+                                leftIcon={<PlusIcon />}
+                            ></Button>
+                        }
                         largeRightButton={
-                            <Button primary className={cx('large-add-btn')}>
+                            <Button to="/campaign-create" primary className={cx('large-add-btn')}>
                                 Thêm chiến dịch mới
                             </Button>
                         }
                     />
                     <div className={cx('list-wrapper-inner')}>
-                        <CardExpand title="Chiến dịch 1">
-                            <CardItem icon={<ClockIcon/>}>2020-11-20 - 2022-11-9</CardItem>
-                            <CardItem icon={<ClockIcon/>}>2020-11-20 - 2022-11-9</CardItem>
-                        </CardExpand>
+                        <CampaignCardExpand title="Chiến dịch 1">
+                            <CampaignCardItem type="time">10/6/2022</CampaignCardItem>
+                            <CampaignCardItem type="info">
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                            </CampaignCardItem>
+                        </CampaignCardExpand>
                     </div>
                 </div>
             ) : (
                 <div className={cx('empty-list-wrapper')}>
                     <Topbar
+                        className={cx('topbar')}
                         currentPage={<span className={cx('current-page')}>Danh sách chiến dịch</span>}
                         rightButton={<Button primary className={cx('add-btn')} leftIcon={<PlusIcon />}></Button>}
                     />

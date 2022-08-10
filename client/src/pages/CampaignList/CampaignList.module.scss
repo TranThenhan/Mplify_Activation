@@ -62,6 +62,12 @@
     width: 205px;
 }
 
+.empty-list-wrapper {
+    .topbar {
+        display: none;
+    }
+}
+
 @media (max-width: 1023px) {
     .wrapper {
         padding: 32px 16px;
@@ -74,6 +80,13 @@
     }
     .empty-list-wrapper {
         margin-top: 0;
+        .topbar {
+            display: flex;
+        }
+    }
+
+    .list-wrapper-inner {
+        grid-template-columns: 1fr;
     }
 
     .create-btn {
@@ -91,6 +104,8 @@
     .large-add-btn {
         display: none;
     }
+
+
 }
 
 

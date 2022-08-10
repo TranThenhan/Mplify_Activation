@@ -11,6 +11,7 @@ function CreateCampaign() {
     return (
         <div className={cx('wrapper')}>
             <Topbar
+                className={cx('topbar')}
                 currentPage={<span className={cx('current-page')}>Tạo chiến dịch</span>}
             />
             <div className={cx('form')}>
