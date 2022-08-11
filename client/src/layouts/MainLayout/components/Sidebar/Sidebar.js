@@ -3,6 +3,7 @@ import { useState } from 'react';
 import styles from './Sidebar.module.scss';
 import images from '~/assests/images';
 import Button from '~/components/Button';
+import routes from '~/config/routes';
 import {
     ChartPieIcon,
     UserGroupIcon,
@@ -66,7 +67,7 @@ function Sidebar() {
                             <Button
                                 className={cx('collapse-item')}
                                 leftIcon={<NoIcon />}
-                                to="/login"
+                                to={routes.account}
                             >
                                 Thông tin tài khoản
                             </Button>

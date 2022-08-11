@@ -5,6 +5,7 @@ const images = {
     logoMobile: require("~/assests/images/logoMobile.png"),
     avtHeader: require("~/assests/images/avtHeader.png"),
     avtDefaultMobile: require("~/assests/images/avtDefaultMobile.png"),
+    avtDefault: require("~/assests/images/avtDefault.png"),
     search: require("~/assests/images/search.png")
 }
 

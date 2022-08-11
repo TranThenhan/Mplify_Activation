@@ -7,7 +7,8 @@ const routes = {
     changePassword: '/change-password',
     confirmCode: '/confirm-code',
     campaignList: '/campaign-list',
-    createCampaign: '/campaign-create'
+    createCampaign: '/campaign-create',
+    account: '/account',
 };
 
 export default routes;

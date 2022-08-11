@@ -9,6 +9,7 @@ import ChangePassword from '~/pages/ChangePassword';
 import ConfirmCode from '~/pages/ConfirmCode';
 import CampaignList from '~/pages/CampaignList';
 import CreateCampaign from '~/pages/CreateCampaign';
+import Account from '~/pages/Account';
 
 const publicRoutes = [
     { path: routes.home, component: Home, layout: MainLayout },
@@ -20,6 +21,7 @@ const publicRoutes = [
     { path: routes.confirmCode, component: ConfirmCode, layout: AuthLayout },
     { path: routes.campaignList, component: CampaignList, layout: MainLayout },
     { path: routes.createCampaign, component: CreateCampaign, layout: MainLayout },
+    { path: routes.account, component: Account, layout: MainLayout },
 ];
 
 const privateRoutes = [];
