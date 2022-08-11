@@ -41,7 +41,7 @@ function Sidebar() {
                 </Select>
 
                 <div className={cx('menu')}>
-                    <Button className={cx('menu-item')} leftIcon={<UserGroupIcon />} to="/">
+                    <Button className={cx('menu-item')} leftIcon={<UserGroupIcon />} to="/booth-manage">
                         Quản lý gian hàng
                     </Button>
                     <Button className={cx('menu-item')} leftIcon={<ChartPieIcon />} to="/register">

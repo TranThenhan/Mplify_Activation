@@ -35,11 +35,11 @@ function createLable(type) {
     }
 }
 
-function CampaignCardItem({ type = 'time', children }) {
+function CampaignCardItem({ type = 'time', children, variant = 'default' }) {
     const { icon, lable } = createLable(type);
 
     return (
-        <div className={cx('wrapper')}>
+        <div className={cx('wrapper', { [variant]: variant })}>
             {icon}
             <div>
                 <span className={cx('lable')}>{lable}</span>

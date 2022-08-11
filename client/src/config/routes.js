@@ -9,6 +9,7 @@ const routes = {
     campaignList: '/campaign-list',
     createCampaign: '/campaign-create',
     account: '/account',
+    manageBooth: '/booth-manage'
 };
 
 export default routes;

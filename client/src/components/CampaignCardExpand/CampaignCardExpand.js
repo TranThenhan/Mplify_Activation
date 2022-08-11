@@ -6,7 +6,7 @@ import styles from './CampaignCardExpand.module.scss';
 
 const cx = classNames.bind(styles);
 
-function CampaignCardExpand({ title, children }) {
+function CampaignCardExpand({ title, children, variant='default' }) {
     const [toggle, setToggle] = useState(false);
     const handleClick = () => {
         setToggle(!toggle);
@@ -17,7 +17,7 @@ function CampaignCardExpand({ title, children }) {
     const [firstChild, ...restChild] = listChildren;
 
     return (
-        <div className={cx('wrapper')}>
+        <div className={cx('wrapper', {[variant]: variant})}>
             <div className={cx('inner')}>
                 <p className={cx('title')}>{title}</p>
                 <div className={cx('content')}>

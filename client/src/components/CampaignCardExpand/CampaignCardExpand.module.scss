@@ -5,6 +5,43 @@
     height: fit-content;
 }
 
+.card-top {
+    padding-bottom: 16px;
+    .content {
+        gap: 8px 0;
+        padding-left: 8px
+    }
+
+    .bottom, .bottom-mobile{
+        display: none;
+    }
+    .content-non-collapse {
+        display: flex;
+    }
+    .content-collapse {
+        display: none;
+    }
+}
+
+.two-button {
+    padding: 16px 24px 16px 24px;
+    .bottom-mobile {
+        display: flex;
+        gap: 0 12px;
+        margin-top: 12px;
+    }
+
+    .bottom{
+        display: none;
+    }
+    .content-non-collapse {
+        display: flex;
+    }
+    .content-collapse {
+        display: none;
+    }
+}
+
 .inner {
     display: flex;
     flex-direction: column;
@@ -36,7 +73,6 @@
 }
 
 .content-non-collapse {
-    display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 12px 0;
@@ -54,6 +90,10 @@
 
 .bottom-mobile {
     display: none;
+}
+
+.collapse-btn {
+    padding: 7px 0 7px 0;
 }
 
 @media (max-width: 767px) {
@@ -86,7 +126,5 @@
         padding: 10px;
     }
 
-    .collapse-btn {
-        padding: 7px 0 7px 0;
-    }
+
 }
