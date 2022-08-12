@@ -4,11 +4,13 @@ import CampaignCardExpand from '~/components/CampaignCardExpand';
 import CampaignCardItem from '~/components/CampaignCardItem';
 import { PlusIcon } from '~/components/Icon';
 import Topbar from '~/layouts/MainLayout/components/Topbar';
+import EmptyList from '../EmptyList';
 import styles from './ManageBooth.module.scss';
 
 const cx = classNames.bind(styles);
 
 function ManageBooth() {
+    const boothList = [];
     return (
         <div className={cx('wrapper')}>
             <div className={cx('inner')}>
@@ -24,47 +26,126 @@ function ManageBooth() {
                 </div>
 
                 <Topbar
+                    className={cx({ 'topbar-custom': boothList.length === 0 })}
                     currentPage={<span className={cx('current-page')}>Danh sách chiến dịch</span>}
                     rightButton={
-                        <Button
-                            to="/campaign-create"
-                            primary
-                            className={cx('add-btn')}
-                            leftIcon={<PlusIcon />}
-                        ></Button>
+                        <Button to="/booth-create" primary className={cx('add-btn')} leftIcon={<PlusIcon />}></Button>
                     }
                     largeRightButton={
-                        <Button to="/campaign-create" primary className={cx('large-add-btn')}>
+                        <Button to="/booth-create" primary className={cx('large-add-btn')}>
                             Thêm gian hàng
                         </Button>
                     }
                 />
-                <div className={cx('list-booth')}>
-                    <CampaignCardExpand variant="two-button" title="Chiến dịch 1">
-                        <CampaignCardItem variant="have-icon">lorem</CampaignCardItem>
-                        <CampaignCardItem variant="have-icon">lorem</CampaignCardItem>
-                    </CampaignCardExpand>
-                    <CampaignCardExpand variant="two-button" title="Chiến dịch 1">
-                        <CampaignCardItem variant="have-icon">lorem</CampaignCardItem>
-                        <CampaignCardItem variant="have-icon">lorem</CampaignCardItem>
-                    </CampaignCardExpand>
-                    <CampaignCardExpand variant="two-button" title="Chiến dịch 1">
-                        <CampaignCardItem variant="have-icon">lorem</CampaignCardItem>
-                        <CampaignCardItem variant="have-icon">lorem</CampaignCardItem>
-                    </CampaignCardExpand>
-                    <CampaignCardExpand variant="two-button" title="Chiến dịch 1">
-                        <CampaignCardItem variant="have-icon">lorem</CampaignCardItem>
-                        <CampaignCardItem variant="have-icon">lorem</CampaignCardItem>
-                    </CampaignCardExpand>
-                    <CampaignCardExpand variant="two-button" title="Chiến dịch 1">
-                        <CampaignCardItem variant="have-icon">lorem</CampaignCardItem>
-                        <CampaignCardItem variant="have-icon">lorem</CampaignCardItem>
-                    </CampaignCardExpand>
-                    <CampaignCardExpand variant="two-button" title="Chiến dịch 1">
-                        <CampaignCardItem variant="have-icon">lorem</CampaignCardItem>
-                        <CampaignCardItem variant="have-icon">lorem</CampaignCardItem>
-                    </CampaignCardExpand>
-                </div>
+
+                {boothList.length > 0 ? (
+                    <div className={cx('list-booth')}>
+                        <CampaignCardExpand variant="two-button" title="Gian hàng 1">
+                            <CampaignCardItem type="time" variant="have-icon">
+                                12/6/2022 - 30/6/2022
+                            </CampaignCardItem>
+                            <CampaignCardItem type="user" variant="have-icon">
+                                Nguyễn Hạnh My
+                            </CampaignCardItem>
+                            <CampaignCardItem type="time" variant="have-icon">
+                                12/6/2022 - 30/6/2022
+                            </CampaignCardItem>
+                            <CampaignCardItem type="location" variant="have-icon">
+                                11 Sư Vạn Hạnh, Phường 12, Quận 10, Thành phố Hồ Chí Minh
+                            </CampaignCardItem>
+                            <CampaignCardItem type="sampling" variant="have-icon">
+                                Sampling
+                            </CampaignCardItem>
+                        </CampaignCardExpand>
+                        <CampaignCardExpand variant="two-button" title="Gian hàng 1">
+                            <CampaignCardItem type="time" variant="have-icon">
+                                12/6/2022 - 30/6/2022
+                            </CampaignCardItem>
+                            <CampaignCardItem type="user" variant="have-icon">
+                                Nguyễn Hạnh My
+                            </CampaignCardItem>
+                            <CampaignCardItem type="time" variant="have-icon">
+                                12/6/2022 - 30/6/2022
+                            </CampaignCardItem>
+                            <CampaignCardItem type="location" variant="have-icon">
+                                11 Sư Vạn Hạnh, Phường 12, Quận 10, Thành phố Hồ Chí Minh
+                            </CampaignCardItem>
+                            <CampaignCardItem type="sampling" variant="have-icon">
+                                Sampling
+                            </CampaignCardItem>
+                        </CampaignCardExpand>
+                        <CampaignCardExpand variant="two-button" title="Gian hàng 1">
+                            <CampaignCardItem type="time" variant="have-icon">
+                                12/6/2022 - 30/6/2022
+                            </CampaignCardItem>
+                            <CampaignCardItem type="user" variant="have-icon">
+                                Nguyễn Hạnh My
+                            </CampaignCardItem>
+                            <CampaignCardItem type="time" variant="have-icon">
+                                12/6/2022 - 30/6/2022
+                            </CampaignCardItem>
+                            <CampaignCardItem type="location" variant="have-icon">
+                                11 Sư Vạn Hạnh, Phường 12, Quận 10, Thành phố Hồ Chí Minh
+                            </CampaignCardItem>
+                            <CampaignCardItem type="sampling" variant="have-icon">
+                                Sampling
+                            </CampaignCardItem>
+                        </CampaignCardExpand>
+                        <CampaignCardExpand variant="two-button" title="Gian hàng 1">
+                            <CampaignCardItem type="time" variant="have-icon">
+                                12/6/2022 - 30/6/2022
+                            </CampaignCardItem>
+                            <CampaignCardItem type="user" variant="have-icon">
+                                Nguyễn Hạnh My
+                            </CampaignCardItem>
+                            <CampaignCardItem type="time" variant="have-icon">
+                                12/6/2022 - 30/6/2022
+                            </CampaignCardItem>
+                            <CampaignCardItem type="location" variant="have-icon">
+                                11 Sư Vạn Hạnh, Phường 12, Quận 10, Thành phố Hồ Chí Minh
+                            </CampaignCardItem>
+                            <CampaignCardItem type="sampling" variant="have-icon">
+                                Sampling
+                            </CampaignCardItem>
+                        </CampaignCardExpand>
+                        <CampaignCardExpand variant="two-button" title="Gian hàng 1">
+                            <CampaignCardItem type="time" variant="have-icon">
+                                12/6/2022 - 30/6/2022
+                            </CampaignCardItem>
+                            <CampaignCardItem type="user" variant="have-icon">
+                                Nguyễn Hạnh My
+                            </CampaignCardItem>
+                            <CampaignCardItem type="time" variant="have-icon">
+                                12/6/2022 - 30/6/2022
+                            </CampaignCardItem>
+                            <CampaignCardItem type="location" variant="have-icon">
+                                11 Sư Vạn Hạnh, Phường 12, Quận 10, Thành phố Hồ Chí Minh
+                            </CampaignCardItem>
+                            <CampaignCardItem type="sampling" variant="have-icon">
+                                Sampling
+                            </CampaignCardItem>
+                        </CampaignCardExpand>
+                        <CampaignCardExpand variant="two-button" title="Gian hàng 1">
+                            <CampaignCardItem type="time" variant="have-icon">
+                                12/6/2022 - 30/6/2022
+                            </CampaignCardItem>
+                            <CampaignCardItem type="user" variant="have-icon">
+                                Nguyễn Hạnh My
+                            </CampaignCardItem>
+                            <CampaignCardItem type="time" variant="have-icon">
+                                12/6/2022 - 30/6/2022
+                            </CampaignCardItem>
+                            <CampaignCardItem type="location" variant="have-icon">
+                                11 Sư Vạn Hạnh, Phường 12, Quận 10, Thành phố Hồ Chí Minh
+                            </CampaignCardItem>
+                            <CampaignCardItem type="sampling" variant="have-icon">
+                                Sampling
+                            </CampaignCardItem>
+                        </CampaignCardExpand>
+                    </div>
+                ) : (
+                    <EmptyList variant='booth'/>
+                )}
             </div>
         </div>
     );

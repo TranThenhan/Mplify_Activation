@@ -7,7 +7,7 @@ const cx = classNames.bind(styles);
 
 function Topbar({currentPage, rightButton, largeRightButton, className}) {
     return (
-        <div className={cx('top-bar', {[className]:className})}>
+        <div className={cx('wrapper', {[className]:className})}>
             <div className={cx('back-block')}>
                 <Button primary className={cx('back-btn')} leftIcon={<BackIcon />}></Button>
                 {currentPage}

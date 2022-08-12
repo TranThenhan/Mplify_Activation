@@ -8,6 +8,12 @@
     gap: 32px 0;
 }
 
+.inner {
+    .topbar-custom {
+        display: none;
+    }
+}
+
 //topbar
 .current-page {
     font-weight: 500;
@@ -37,6 +43,17 @@
     column-gap: 16px;
 }
 
+//emty
+.empty-list-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: calc(100px - 32px);
+    gap: 100px 0px;
+}
+
+//empty
+
 @media (max-width: 1023px) {
 
     .wrapper {
@@ -50,6 +67,12 @@
     }
     .list-booth {
         grid-template-columns: 1fr 1fr;
+    }
+
+    .inner {
+        .topbar-custom {
+            display: flex;
+        }
     }
 
     .current-page {
