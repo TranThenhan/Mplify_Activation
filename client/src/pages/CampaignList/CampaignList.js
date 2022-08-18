@@ -3,13 +3,13 @@ import styles from './CampaignList.module.scss';
 import Button from '~/components/Button';
 import Topbar from '~/layouts/MainLayout/components/Topbar';
 import { PlusIcon } from '~/components/Icon';
-import CampaignCardExpand from '~/components/CampaignCardExpand/CampaignCardExpand';
-import CampaignCardItem from '~/components/CampaignCardItem';
+import Card from '~/components/Card/Card';
+import CardItem from '~/components/CardItem';
 import EmptyList from '../EmptyList';
 const cx = classNames.bind(styles);
 
 function CampaignList() {
-    const campaignList = [];
+    const campaignList = [1];
     return (
         <div className={cx('wrapper')}>
             <div className={cx('inner')}>
@@ -32,33 +32,41 @@ function CampaignList() {
                 />
                 {campaignList.length > 0 ? (
                     <div className={cx('list-campaign')}>
-                        <CampaignCardExpand title="Chiến dịch 1">
-                            <CampaignCardItem type="time">10/6/2022</CampaignCardItem>
-                            <CampaignCardItem type="info">
+                        <Card variant="card-expand-two-button" title="Chiến dịch 1">
+                            <CardItem variant="have-icon-no-icon" type="time">
+                                10/6/2022
+                            </CardItem>
+                            <CardItem variant="have-icon-no-icon" type="info">
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                            </CampaignCardItem>
-                        </CampaignCardExpand>
-                        <CampaignCardExpand title="Chiến dịch 1">
-                            <CampaignCardItem type="time">10/6/2022</CampaignCardItem>
-                            <CampaignCardItem type="info">
+                            </CardItem>
+                        </Card>
+                        <Card variant="card-expand-two-button" title="Chiến dịch 1">
+                            <CardItem variant="have-icon-no-icon" type="time">
+                                10/6/2022
+                            </CardItem>
+                            <CardItem variant="have-icon-no-icon" type="info">
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                            </CampaignCardItem>
-                        </CampaignCardExpand>
-                        <CampaignCardExpand title="Chiến dịch 1">
-                            <CampaignCardItem type="time">10/6/2022</CampaignCardItem>
-                            <CampaignCardItem type="info">
+                            </CardItem>
+                        </Card>
+                        <Card variant="card-expand-two-button" title="Chiến dịch 1">
+                            <CardItem variant="have-icon-no-icon" type="time">
+                                10/6/2022
+                            </CardItem>
+                            <CardItem variant="have-icon-no-icon" type="info">
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                            </CampaignCardItem>
-                        </CampaignCardExpand>
-                        <CampaignCardExpand title="Chiến dịch 1">
-                            <CampaignCardItem type="time">10/6/2022</CampaignCardItem>
-                            <CampaignCardItem type="info">
+                            </CardItem>
+                        </Card>
+                        <Card variant="card-expand-two-button" title="Chiến dịch 1">
+                            <CardItem variant="have-icon-no-icon" type="time">
+                                10/6/2022
+                            </CardItem>
+                            <CardItem variant="have-icon-no-icon" type="info">
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                            </CampaignCardItem>
-                        </CampaignCardExpand>
+                            </CardItem>
+                        </Card>
                     </div>
                 ) : (
-                    <EmptyList variant='campaign'/>
+                    <EmptyList variant="campaign" />
                 )}
             </div>
         </div>

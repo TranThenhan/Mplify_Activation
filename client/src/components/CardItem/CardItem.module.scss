@@ -3,6 +3,60 @@
     align-items: center;
     gap: 0 10px;
     font-weight: 400;
-    font-size: 1.4ren;
+    font-size: 1.4rem;
     line-height: 1.8rem;
+}
+
+.have-icon {
+    gap: 0 10px;
+    .dot-icon {
+        display: none;
+    }
+    .icon {
+        display: block;
+    }
+    .lable {
+        display: none;
+    }
+}
+
+.no-icon {
+    gap: 0 0px;
+    .dot-icon {
+        display: block;
+    }
+    .icon {
+        display: none;
+    }
+    .lable {
+        display: inline;
+    }
+}
+
+.have-icon-no-icon {
+    .dot-icon {
+        display: none;
+    }
+
+    .lable {
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .have-icon-no-icon {
+        .dot-icon {
+            display: block;
+        }
+        .icon {
+            display: none;
+        }
+        .lable {
+            display: inline;
+        }
+
+        &.wrapper {
+            gap: 0 0;
+        }
+    }
 }

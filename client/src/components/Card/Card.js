@@ -2,11 +2,11 @@ import classNames from 'classnames/bind';
 import { useState } from 'react';
 import Button from '../Button';
 import { ChevronDownIcon, ChevronUpIcon } from '../Icon';
-import styles from './CampaignCardExpand.module.scss';
+import styles from './Card.module.scss';
 
 const cx = classNames.bind(styles);
 
-function CampaignCardExpand({ title, children, variant='default' }) {
+function Card({ title, children, variant = 'default' }) {
     const [toggle, setToggle] = useState(false);
     const handleClick = () => {
         setToggle(!toggle);
@@ -17,7 +17,7 @@ function CampaignCardExpand({ title, children, variant='default' }) {
     const [firstChild, ...restChild] = listChildren;
 
     return (
-        <div className={cx('wrapper', {[variant]: variant})}>
+        <div className={cx('wrapper', { [variant]: variant })}>
             <div className={cx('inner')}>
                 <p className={cx('title')}>{title}</p>
                 <div className={cx('content')}>
@@ -26,18 +26,18 @@ function CampaignCardExpand({ title, children, variant='default' }) {
                     <div className={cx('content-non-collapse')}>{restChild}</div>
                 </div>
             </div>
-            <div className={cx('bottom')}>
+            <div className={cx('bottom-expand')}>
                 <Button
                     onClick={handleClick}
-                    className={cx('collapse-btn')}
+                    className={cx('button')}
                     leftIcon={toggle ? <ChevronUpIcon /> : <ChevronDownIcon />}
                 />
             </div>
-            <div className={cx('bottom-mobile')}>
-                <Button className={cx('collapse-btn')} primary>
+            <div className={cx('bottom-two-btn')}>
+                <Button className={cx('button')} primary>
                     Xem chi tiết
                 </Button>
-                <Button className={cx('collapse-btn')} secondary>
+                <Button className={cx('button')} secondary>
                     Chỉnh sửa
                 </Button>
             </div>
@@ -45,4 +45,4 @@ function CampaignCardExpand({ title, children, variant='default' }) {
     );
 }
 
-export default CampaignCardExpand;
+export default Card;

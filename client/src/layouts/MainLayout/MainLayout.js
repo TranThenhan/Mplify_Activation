@@ -9,10 +9,10 @@ function MainLayout({ children }) {
     return (
         <div className={cx('wrapper')}>
             <div className={cx('container')}>
-                <Sidebar/>
-                <div style={{ flex: '1' }} className ={cx('main')}>
-                  <Header/>
-                  {children}
+                <Sidebar />
+                <div style={{ flex: '1' }} className={cx('main')}>
+                    <Header />
+                    {children}
                 </div>
             </div>
         </div>

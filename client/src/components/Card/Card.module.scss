@@ -1,0 +1,136 @@
+.wrapper {
+    padding: 16px 24px 0px 24px;
+    box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+    height: fit-content;
+}
+
+.inner {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.title {
+    font-weight: 600;
+    font-size: 1.6rem;
+    line-height: 2rem;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px 0;
+}
+
+.button {
+    padding: 7px 0 7px 0;
+    span {
+        font-weight: 600;
+        font-size: 1.4rem;
+        line-height: 1.8rem;
+    }
+}
+
+.card-top {
+    padding-bottom: 16px;
+    .content {
+        gap: 8px 0;
+        padding-left: 8px
+    }
+
+    .bottom-expand, .bottom-two-btn{
+        display: none;
+    }
+    .content-non-collapse {
+        display: flex;
+    }
+    .content-collapse {
+        display: none;
+    }
+}
+
+.card-two-button {
+    padding: 16px 24px 16px 24px;
+
+    .bottom-expand{
+        display: none;
+    }
+    .content-non-collapse {
+        display: flex;
+    }
+    .content-collapse {
+        display: none;
+    }
+}
+
+.card-expand-two-button {
+    .content-collapse {
+        display: none;
+        &.show {
+            display: flex;
+        }
+    }
+
+    .content-non-collapse {
+        display: none;
+    }
+
+    .bottom-two-btn {
+        display: none;
+    }
+}
+
+.content-collapse {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px 0;
+}
+
+.content-non-collapse {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px 0;
+}
+
+.bottom-two-btn {
+    display: flex;
+    gap: 0 12px;
+    margin-top: 12px;
+}
+
+
+@media (max-width: 767px) {
+
+    .card-expand-two-button {
+        .content {
+            gap: 0 0;
+            padding-left: 8px;
+            .content-collapse {
+                gap: 0 0;
+                display: none;
+            }
+        }
+
+        .content-non-collapse {
+            display: flex;
+        }
+    
+        .bottom-expand {
+            display: none;
+        }
+    
+        .bottom-two-btn {
+            display: flex;
+        }
+        
+    }
+
+    .wrapper {
+        padding: 10px;
+    }
+
+
+}
