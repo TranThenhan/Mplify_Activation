@@ -5,10 +5,15 @@
     height: fit-content;
 }
 
-.inner {
+.center {
     display: flex;
     flex-direction: column;
     gap: 12px;
+    flex: 1;
+}
+
+.inner {
+    display: flex;
 }
 
 .title {
@@ -32,6 +37,55 @@
     }
 }
 
+.content-collapse {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px 0;
+}
+
+.content-non-collapse {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px 0;
+}
+
+.bottom-two-btn {
+    display: none;
+    gap: 0 12px;
+    margin-top: 12px;
+}
+
+.bottom-expand {
+    display: none;
+}
+
+.right {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    .right-expand-btn{
+        width: 24px;
+        height: 24px;
+        padding: 0;
+    }
+}
+
+
+.card-expand-right-button {
+    .bottom-expand {
+        display: block;
+    }
+
+    .content-collapse {
+        &.show {
+            display: flex;
+        }
+    }
+}
+
+
 .card-top {
     padding-bottom: 16px;
     .content {
@@ -39,9 +93,6 @@
         padding-left: 8px
     }
 
-    .bottom-expand, .bottom-two-btn{
-        display: none;
-    }
     .content-non-collapse {
         display: flex;
     }
@@ -55,6 +106,9 @@
 
     .bottom-expand{
         display: none;
+    }
+    .bottom-two-btn {
+        display: flex;
     }
     .content-non-collapse {
         display: flex;
@@ -79,37 +133,19 @@
     .bottom-two-btn {
         display: none;
     }
-}
 
-.content-collapse {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 12px 0;
-}
-
-.content-non-collapse {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 12px 0;
-}
-
-.bottom-two-btn {
-    display: flex;
-    gap: 0 12px;
-    margin-top: 12px;
+    .bottom-expand {
+        display: block;
+    }
 }
 
 
 @media (max-width: 767px) {
-
     .card-expand-two-button {
         .content {
             gap: 0 0;
             padding-left: 8px;
             .content-collapse {
-                gap: 0 0;
                 display: none;
             }
         }
@@ -126,6 +162,15 @@
             display: flex;
         }
         
+    }
+
+    .card-expand-right-button {
+        .bottom-expand {
+            display: none;
+        }
+        .right {
+            display: flex;
+        }
     }
 
     .wrapper {

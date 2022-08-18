@@ -12,6 +12,7 @@ import CreateCampaign from '~/pages/CreateCampaign';
 import Account from '~/pages/Account';
 import ManageBooth from '~/pages/ManageBooth';
 import CreateBooth from '~/pages/CreateBooth';
+import BoothList from '~/pages/Supervisor/BoothList';
 
 const publicRoutes = [
     { path: routes.home, component: Home, layout: MainLayout },
@@ -26,6 +27,9 @@ const publicRoutes = [
     { path: routes.account, component: Account, layout: MainLayout },
     { path: routes.manageBooth, component: ManageBooth, layout: MainLayout },
     { path: routes.createBooth, component: CreateBooth, layout: MainLayout },
+    { path: routes.createBooth, component: CreateBooth, layout: MainLayout },
+
+    { path: routes.supervisor.BoothList, component: BoothList, layout: MainLayout },
 ];
 
 const privateRoutes = [];

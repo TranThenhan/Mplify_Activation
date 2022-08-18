@@ -10,7 +10,11 @@ const routes = {
     createCampaign: '/campaign-create',
     account: '/account',
     manageBooth: '/booth-manage',
-    createBooth: '/booth-create'
+    createBooth: '/booth-create',
+
+    supervisor: {
+        BoothList: '/supervisor/booth-list'
+    }
 };
 
 export default routes;
