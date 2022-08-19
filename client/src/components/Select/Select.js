@@ -13,6 +13,8 @@ function Select({ value, children, className, onChange}) {
         onChange(optValue);
         setShow(false);
     };
+    let listChildren = children;
+    if (!Array.isArray(listChildren)) listChildren = [children];
 
     return (
         <div className={cx('wrapper', { [className]: className })}>
@@ -23,7 +25,7 @@ function Select({ value, children, className, onChange}) {
                 </div>
                 {show && (
                     <div className={cx('wrapper-options')}>
-                        {children.map((child, index) => {
+                        {listChildren.map((child, index) => {
                             return (
                                 <Option key={index} value={child.props.value} onClick={handleSelectOption}>
                                     {child.props.children}

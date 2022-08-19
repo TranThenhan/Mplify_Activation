@@ -346,7 +346,7 @@ export const GlobeIcon = () => (
     </svg>
 );
 
-export const ChevronRightIcon = ({size = '24'}) => (
+export const ChevronRightIcon = ({ size = '24' }) => (
     <svg
         style={{ display: 'block' }}
         width={size}
@@ -356,6 +356,19 @@ export const ChevronRightIcon = ({size = '24'}) => (
         xmlns="http://www.w3.org/2000/svg"
     >
         <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+);
+
+export const ChevronLeftIcon = ({ size = '24' }) => (
+    <svg
+        style={{ display: 'block' }}
+        width={size}
+        height={size}
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+    >
+        <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
 );
 
@@ -469,9 +482,22 @@ export const LayerGroupIcon = () => (
             strokeLinecap="round"
             strokeLinejoin="round"
         />
+        <path d="M1.33301 8L7.99967 11.3333L14.6663 8" stroke="#2F2F2F" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+);
+
+export const StarIcon = () => (
+    <svg
+        style={{ display: 'block' }}
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+    >
         <path
-            d="M1.33301 8L7.99967 11.3333L14.6663 8"
-            stroke="#2F2F2F"
+            d="M10.0607 5.50634L8.00065 1.33301L5.94065 5.50634L1.33398 6.17968L4.66732 9.42634L3.88065 14.013L8.00065 11.8463L12.1207 14.013L11.334 9.42634L14.6673 6.17968L10.0607 5.50634Z"
+            stroke="currentColor"
             strokeLinecap="round"
             strokeLinejoin="round"
         />

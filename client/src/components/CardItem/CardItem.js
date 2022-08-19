@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import { CircleInfoIcon, ClockIcon, LayerGroupIcon, MappinCardIcon, UserIcon } from '../Icon';
+import { CircleInfoIcon, ClockIcon, LayerGroupIcon, MappinCardIcon, StarIcon, UserIcon } from '../Icon';
 import styles from './CardItem.module.scss';
 
 const cx = classNames.bind(styles);
@@ -65,6 +65,18 @@ function createLable(type) {
                     </>
                 ),
                 lable: 'Sampling: ',
+            };
+        case 'campaign':
+            return {
+                icon: (
+                    <>
+                        <span className={cx('icon')}>
+                            <StarIcon />
+                        </span>
+                        <span className={cx('dot-icon')}>&bull;&nbsp;&nbsp;</span>
+                    </>
+                ),
+                lable: 'Chiến dịch: ',
             };
         default:
             break;
