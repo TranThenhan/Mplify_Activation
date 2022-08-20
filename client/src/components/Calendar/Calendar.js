@@ -1,4 +1,17 @@
 import classNames from 'classnames/bind';
+import {
+    add,
+    eachDayOfInterval,
+    endOfMonth,
+    endOfWeek,
+    format,
+    isEqual,
+    isSameMonth,
+    parse,
+    startOfToday,
+    startOfWeek,
+} from 'date-fns';
+import vi from 'date-fns/locale/vi';
 import { useState } from 'react';
 import Button from '../Button';
 import { ChevronDownIcon, ChevronLeftIcon, ChevronRightIcon } from '../Icon';
@@ -8,11 +21,34 @@ const cx = classNames.bind(styles);
 
 function Calendar({ value, className, onChange }) {
     const [show, setShow] = useState(false);
-    const days = [
-        1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
-        31, 1, 2, 3, 4
-    ];
-    const select = 2;
+
+    const today = startOfToday();
+    const [selectedDay, setSelectedDay] = useState(today);
+    const [currentMonth, setCurrentMonth] = useState(format(today, 'MMM-yyyy'));
+    const firstDayOfCurrentMonth = parse(currentMonth, 'MMM-yyyy', new Date());
+
+    const newDays = eachDayOfInterval({
+        start: startOfWeek(firstDayOfCurrentMonth, { weekStartsOn: 1 }),
+        end: endOfWeek(endOfMonth(firstDayOfCurrentMonth), { weekStartsOn: 1 }),
+    });
+    const handleNextMonth = () => {
+        const firstDayOfNextMonth = add(firstDayOfCurrentMonth, { months: 1 });
+        setCurrentMonth(format(firstDayOfNextMonth, 'MMM-yyyy'));
+    };
+    const handlePrevMonth = () => {
+        const firstDayOfNextMonth = add(firstDayOfCurrentMonth, { months: -1 });
+        setCurrentMonth(format(firstDayOfNextMonth, 'MMM-yyyy'));
+    };
+
+    const handleSelectDay = (day) => {
+        setSelectedDay(day);
+    };
+
+    const handleClick = () => {
+        setShow(false);
+        onChange(selectedDay);
+    };
+
     return (
         <div className={cx('wrapper', { [className]: className })}>
             <div className={cx('inner')} onBlur={() => setShow(false)} tabIndex={0}>
@@ -23,10 +59,18 @@ function Calendar({ value, className, onChange }) {
                 {show && (
                     <div className={cx('calendar')}>
                         <div className={cx('top')}>
-                            <p className={cx('lable')}>Tháng 5, 2022</p>
+                            <p className={cx('lable')}>{format(firstDayOfCurrentMonth, 'MMMM, yyy', { locale: vi })}</p>
                             <div className={cx('chevron-block')}>
-                                <Button className={cx('chevron')} leftIcon={<ChevronLeftIcon />} />
-                                <Button className={cx('chevron')} leftIcon={<ChevronRightIcon />} />
+                                <Button
+                                    onClick={handlePrevMonth}
+                                    className={cx('chevron')}
+                                    leftIcon={<ChevronLeftIcon />}
+                                />
+                                <Button
+                                    onClick={handleNextMonth}
+                                    className={cx('chevron')}
+                                    leftIcon={<ChevronRightIcon />}
+                                />
                             </div>
                         </div>
                         <div className={cx('week-lables')}>
@@ -40,13 +84,34 @@ function Calendar({ value, className, onChange }) {
                         </div>
                         <div className={cx('separetor')}></div>
                         <div className={cx('days')}>
-                            {days.map((day, index) => (
-                                <div key={index} className={cx('day', {'selected':index===select})}>
-                                    <button onMouseDown={(e)=> {e.preventDefault()}} onClick={() => {console.log('a');}}>{day}</button>
+                            {newDays.map((day, index) => (
+                                <div
+                                    key={day.toString()}
+                                    className={cx('day', {
+                                        'same-month': isSameMonth(day, firstDayOfCurrentMonth),
+                                        today: isEqual(day, today),
+                                        selected: isEqual(day, selectedDay),
+                                    })}
+                                >
+                                    <button
+                                        onMouseDown={(e) => {
+                                            e.preventDefault();
+                                        }}
+                                        onClick={() => handleSelectDay(day)}
+                                    >
+                                        <time dateTime={format(day, 'yyyy-MM-dd')}>{format(day, 'd')}</time>
+                                    </button>
                                 </div>
                             ))}
                         </div>
-                        <Button className={cx('select-btn')} primary>
+                        <Button
+                            onMouseDown={(e) => {
+                                e.preventDefault();
+                            }}
+                            onClick={handleClick}
+                            className={cx('select-btn')}
+                            primary
+                        >
                             Chọn
                         </Button>
                     </div>

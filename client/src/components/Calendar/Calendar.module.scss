@@ -34,13 +34,10 @@
     display: flex;
     flex-direction: column;
     gap: 8px 0;
-    height: 317px;
     background-color: var(--white);
     padding: 8px;
     box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.15);
     border-radius: 8px;
-
-    
 }
 
 .top {
@@ -52,6 +49,7 @@
         font-weight: 500;
         font-size: 1.4rem;
         line-height: 1.8rem;
+        text-transform: capitalize;
     }
 
     .chevron-block {
@@ -89,6 +87,7 @@
 .days {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
+    grid-column-start: 2;
     column-gap: 8px;
     row-gap: 8px;
     .day {
@@ -101,25 +100,37 @@
             font-weight: 500;
             font-size: 1.4rem;
             line-height: 1.8rem;
-            color: var(--gray-800);
+            color: var(--gray-400);
 
             &:hover {
                 border-radius: 999px;
                 background-color: var(--gray-400);
+                color: var(--gray-800);
+            }
+        }
+        &.same-month {
+            button {
+                color: var(--gray-800);
+            }
+        }
+
+        &.today {
+            button {
+                color: var(--primary-dark);
+                font-weight: 600;
             }
         }
 
         &.selected {
             button {
                 border-radius: 999px;
+                font-weight: 500;
+                color: var(--gray-800);
                 background-color: var(--primary-light);
             }
         }
     }
 }
-
-
-
 
 .select-btn {
     height: 35px;
@@ -127,4 +138,3 @@
     font-size: 1.6rem;
     line-height: 2rem;
 }
-
