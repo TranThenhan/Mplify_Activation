@@ -28,7 +28,8 @@
 
 .wrapper-options {
     margin-top: 6px;
-    border: 1px solid #9e9e9e;
+    filter: drop-shadow(1px 4px 4px rgba(0, 0, 0, 0.1));
+    border-radius: 6px;
     background-color: var(--white);
     border-radius: 4px;
 }
