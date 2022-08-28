@@ -62,11 +62,17 @@ function Calendar({ value, className, onChange }) {
                             <p className={cx('lable')}>{format(firstDayOfCurrentMonth, 'MMMM, yyy', { locale: vi })}</p>
                             <div className={cx('chevron-block')}>
                                 <Button
+                                    onMouseDown={(e) => {
+                                        e.preventDefault();
+                                    }}
                                     onClick={handlePrevMonth}
                                     className={cx('chevron')}
                                     leftIcon={<ChevronLeftIcon />}
                                 />
                                 <Button
+                                    onMouseDown={(e) => {
+                                        e.preventDefault();
+                                    }}
                                     onClick={handleNextMonth}
                                     className={cx('chevron')}
                                     leftIcon={<ChevronRightIcon />}

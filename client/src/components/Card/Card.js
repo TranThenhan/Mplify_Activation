@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
 import { useState } from 'react';
 import Button from '../Button';
-import { ChevronDownIcon, ChevronRightIcon, ChevronUpIcon } from '../Icon';
+import { ChevronDownIcon, ChevronLeftIcon, ChevronRightIcon, ChevronUpIcon } from '../Icon';
 import styles from './Card.module.scss';
 
 const cx = classNames.bind(styles);
@@ -19,6 +19,9 @@ function Card({ title, children, variant = 'default' }) {
     return (
         <div className={cx('wrapper', { [variant]: variant })}>
             <div className={cx('inner')}>
+            <div className={cx('left')}>
+                    <Button className={cx('left-expand-btn')} leftIcon={<ChevronLeftIcon/>}></Button>
+                </div>
                 <div className={cx('center')}>
                     <p className={cx('title')}>{title}</p>
                     <div className={cx('content')}>

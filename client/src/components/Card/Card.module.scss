@@ -72,6 +72,17 @@
     }
 }
 
+.left {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    .left-expand-btn{
+        width: 24px;
+        height: 24px;
+        padding: 0;
+    }
+}
+
 
 .card-expand-right-button {
     .bottom-expand {
@@ -139,6 +150,22 @@
     }
 }
 
+.card-expand-left-right {
+        &.wrapper {
+        padding: 10px 0;
+    }
+    .right {
+        display: flex;
+        margin-left: 8px;
+    }
+    .left {
+        display: flex;
+        margin-right: 8px;
+    }
+    .content-non-collapse {
+        display: flex;
+    }
+}
 
 @media (max-width: 767px) {
     .card-expand-two-button {
